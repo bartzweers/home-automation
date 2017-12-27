@@ -1,0 +1,4 @@
+<div class="background"></div>
+<app-dashboard-view *ngFor="let view of DashboardViews$ | async"
+                    [view]="view">
+</app-dashboard-view>
