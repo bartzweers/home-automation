@@ -21,4 +21,5 @@ import { DashboardIconComponent } from './dashboard/dashboard-view/dashboard-ico
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

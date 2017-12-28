@@ -1,5 +1,5 @@
-<div class="icon-wrapper">
-  <div class="icon" [style.background-image]="'url(/assets/icons/' + _application.icon + '.svg)'"></div>
-</div>
+  <div class="icon-wrapper" (click)="openApplication(_application)">
+    <div class="icon" [style.background-image]="'url(/assets/icons/' + _application.icon + '.svg)'"></div>
+  </div>
 
-<span class="name">{{_application.name}}</span>
+  <span class="name" (click)="openApplication(_application)">{{_application.name}}</span>

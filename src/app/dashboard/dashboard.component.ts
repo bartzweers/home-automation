@@ -1,19 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardView } from '../interfaces/interfaces';
+import { Application, DashboardView } from '../interfaces/interfaces';
 import { AutomationApiService } from '../services/automation-api.service';
 import { Observable } from 'rxjs/Observable';
+import { ApplicationService } from '../services/application.service';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.css'],
+  providers: [ApplicationService]
 })
 export class DashboardComponent implements OnInit {
 
-  public DashboardViews$: Observable<Array<DashboardView>>;
+  private applicationService: ApplicationService;
 
-  constructor() {
+  public DashboardViews$: Observable<DashboardView[]>;
+  public openApplication = new BehaviorSubject<Application>(null);
+
+  constructor(applicationService: ApplicationService) {
+    this.applicationService = applicationService;
     this.DashboardViews$ = AutomationApiService.getDashboardViews();
+
+    this.applicationService.applicationHistory$.subscribe((application: Application | null) => {
+      this.openApplication.next(application);
+    })
   }
 
   ngOnInit() {

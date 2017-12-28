@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    const background = document.querySelector('.background') as any;
-    background.style.backgroundImage = gradient('Settings');
+    // const background = document.querySelector('.background') as any;
+    // background.style.backgroundImage = gradient('Settings');
   }
 }

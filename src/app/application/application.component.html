@@ -1,3 +1,14 @@
-<p>
-  application works!
-</p>
+<div class="application-window">
+  <div class="application-window__title-bar">
+    <div class="application-window__title-bar__app-icon" ></div>
+    <div class="application-window__title-bar__name">{{name}}</div>
+    <div class="application-window__title-bar__icons">
+      <div class="application-window__title-bar__icons__close" (click)="closeApplication()"></div>
+    </div>
+  </div>
+  <div class="application-window__content">
+    <app-settings-app *ngIf="name === 'Settings'"></app-settings-app>
+    <app-lights-app *ngIf="name === 'Lights'"></app-lights-app>
+    <app-curtains-app *ngIf="name === 'Curtains'"></app-curtains-app>
+  </div>
+</div>

@@ -19,8 +19,8 @@ export class AutomationApiService {
   public static getAllApplications(): Application[] {
     return [
       {name: 'Settings', icon: 'settings'},
-      {name: 'Lights', icon: 'settings'},
-      {name: 'Curtains', icon: 'settings'}
+      {name: 'Lights', icon: 'lights'},
+      {name: 'Curtains', icon: 'curtains'}
     ]
   }
 

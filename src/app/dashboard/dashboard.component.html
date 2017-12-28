@@ -2,3 +2,6 @@
 <app-dashboard-view *ngFor="let view of DashboardViews$ | async"
                     [view]="view">
 </app-dashboard-view>
+
+<app-application [class.active]="(openApplication | async) !== null" [application]="(openApplication | async)"></app-application>
+
