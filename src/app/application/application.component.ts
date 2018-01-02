@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, Renderer2 } from '@angular/core';
 import { Application } from '../interfaces/interfaces';
 import { ApplicationService } from '../services/application.service';
 
@@ -7,21 +7,14 @@ import { ApplicationService } from '../services/application.service';
   templateUrl: './application.component.html',
   styleUrls: ['./application.component.css']
 })
-export class ApplicationComponent implements OnInit {
+export class ApplicationComponent implements OnDestroy {
 
   private _application: Application;
   private applicationService: ApplicationService;
 
-  private iconElement: any;
-
   @Input()
   set application(application: Application) {
     this._application = application;
-
-    if (!this.iconElement) {
-      this.iconElement = document.querySelector('.application-window__title-bar__app-icon') as any;
-    }
-    this.iconElement.style.backgroundImage = `/assets/icons/${this.icon}.svg`;
   }
 
   get application() {
@@ -40,11 +33,14 @@ export class ApplicationComponent implements OnInit {
     this.applicationService.openApplication(null);
   }
 
-  constructor(applicationService: ApplicationService) {
+
+  constructor(private renderer: Renderer2, applicationService: ApplicationService) {
     this.applicationService = applicationService;
+    this.renderer.addClass(document.body, 'modal-open');
   }
 
-  ngOnInit() {
+  ngOnDestroy() {
+    this.renderer.removeClass(document.body, 'modal-open');
   }
 
 }

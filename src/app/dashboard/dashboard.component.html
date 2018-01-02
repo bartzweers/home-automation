@@ -3,5 +3,6 @@
                     [view]="view">
 </app-dashboard-view>
 
-<app-application [class.active]="(openApplication | async) !== null" [application]="(openApplication | async)"></app-application>
-
+<app-application *ngIf="(openApplication | async) !== null"
+                 [class.active]="(openApplication | async) !== null"
+                 [application]="(openApplication | async)"></app-application>
