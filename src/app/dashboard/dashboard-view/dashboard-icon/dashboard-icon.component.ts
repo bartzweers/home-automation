@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Application } from '../../../interfaces/interfaces';
 import { ApplicationService } from '../../../services/application.service';
 
@@ -10,7 +10,7 @@ import { ApplicationService } from '../../../services/application.service';
 
 export class DashboardIconComponent implements OnInit {
 
-  private _application: Application;
+  public _application: Application;
   private applicationService: ApplicationService;
 
   @Input()

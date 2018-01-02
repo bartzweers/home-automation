@@ -10,9 +10,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Build & Deployment
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+For deployment builds, run `npm run deploy`. This will build the app with the `--prod` and `--aot` flags and runs the serviceworker pre-cache command to turn it into a progressive web-app.
 
 ## Running unit tests
 

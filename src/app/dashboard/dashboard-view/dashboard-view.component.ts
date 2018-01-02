@@ -8,7 +8,7 @@ import { DashboardView } from '../../interfaces/interfaces';
 })
 export class DashboardViewComponent implements OnInit {
 
-  private _view: DashboardView;
+  public _view: DashboardView;
 
   @Input() set view(value: DashboardView){
     this._view = value;
