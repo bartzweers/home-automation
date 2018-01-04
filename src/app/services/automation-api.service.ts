@@ -13,6 +13,14 @@ export class AutomationApiService {
       position: 0,
       applications: AutomationApiService.getAllApplications(),
       maxIcons: 9
+    }, {
+      position: 0,
+      applications: AutomationApiService.getAllApplications(),
+      maxIcons: 9
+    }, {
+      position: 0,
+      applications: AutomationApiService.getAllApplications(),
+      maxIcons: 9
     }]);
   }
 

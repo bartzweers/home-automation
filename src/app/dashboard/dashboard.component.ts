@@ -18,13 +18,18 @@ export class DashboardComponent implements OnInit {
   public DashboardViews$: Observable<DashboardView[]>;
   public openApplication = new BehaviorSubject<Application>(null);
 
+  public config: SwiperOptions = {
+    paginationClickable: false,
+    spaceBetween: 30
+  };
+
   constructor(applicationService: ApplicationService) {
     this.applicationService = applicationService;
     this.DashboardViews$ = AutomationApiService.getDashboardViews();
 
     this.applicationService.applicationHistory$.subscribe((application: Application | null) => {
       this.openApplication.next(application);
-    })
+    });
   }
 
   ngOnInit() {

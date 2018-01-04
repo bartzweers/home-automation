@@ -1,7 +1,12 @@
 <div class="background"></div>
-<app-dashboard-view *ngFor="let view of DashboardViews$ | async"
-                    [view]="view">
-</app-dashboard-view>
+<swiper [config]="config">
+  <div class="swiper-wrapper">
+    <app-dashboard-view *ngFor="let view of DashboardViews$ | async"
+                        [view]="view"
+                        class="swiper-slide">
+    </app-dashboard-view>
+  </div>
+</swiper>
 
 <app-application *ngIf="(openApplication | async) !== null"
                  [class.active]="(openApplication | async) !== null"
