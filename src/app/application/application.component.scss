@@ -29,6 +29,10 @@
     pointer-events: all;
   }
   .application-window {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
     &__title-bar {
       position: relative;
       width: 100%;
@@ -64,7 +68,7 @@
         background: #cb2d3e; /* fallback for old browsers */
         background: -webkit-linear-gradient(to bottom, #ef473a, #cb2d3e); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to bottom, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        border-radius: 0 0 0 19px;
+        border-radius: 0 0 0 10px;
 
         &__close {
           display: block;
@@ -84,7 +88,8 @@
       padding: 40px;
       max-width: 900px;
       margin: 0 auto;
-
+      height: calc(100% - 80px);
+      overflow: auto;
       app-settings-app {
 
       }
